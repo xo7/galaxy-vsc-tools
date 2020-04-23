@@ -1,0 +1,120 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+    "Galaxy_Loop": {
+        "prefix": "loop",
+        "scope": "html",
+        "body": [
+          "#\\$loop|{${1|room,offer,hotel,news,meeting_room|}}|{a}| $#",
+          "\t$0{a.name}",
+          "#$/loop|{${1|room,offer,hotel,news,meeting_room|}}|{a}| $#"
+        ],
+        "description": "For Loop"
+    },
+    "Galaxy_Loop_PHOTOS": {
+        "prefix": "loop:photos",
+        "scope": "html",
+        "body": [
+          "#\\$loop|{{item.photos}}|{p}| $#",
+          "\t<img src=\"{resizeimg(p.${1|url_panoramic,url_wide,url_standard,url_square,url_portrait,url_vertical|},500)}\" alt=\"{p.alt}\" />",
+          "#$/loop|{{item.photos}}|{p}| $#"
+        ],
+        "description": "For Loop"
+    },
+    "Galaxy_If": {
+        "prefix": "if",
+        "scope": "html",
+        "body": [
+          "{if=\" '$0' != '' \"}",
+          "\t",
+          "{/if}"
+        ],
+        "description": "If"
+    },
+    "Galaxy_If_oneline": {
+        "prefix": "if::oneline",
+        "scope": "html",
+        "body": [
+          "{if=\" '$0' != '' \"}{/if}"
+        ],
+        "description": "If Oneline"
+    },
+    "Galaxy_CMS_Var": {
+        "prefix": "var",
+        "scope": "html",
+        "body": [
+          "#\\$variable|${0:title}$#"
+        ],
+        "description": "CMS Variable"
+    },
+    "Galaxy_CMS_Block": {
+        "prefix": "block",
+        "scope": "html",
+        "body": [
+          "#\\$block|${0:title}$#"
+        ],
+        "description": "CMS Block"
+    },
+    "Galaxy_CMS_List": {
+        "prefix": "list",
+        "scope": "html",
+        "body": [
+          "#\\$list|${0:title}$#"
+        ],
+        "description": "CMS List"
+    },
+    "Galaxy_CMS_Incude": {
+        "prefix": ["include","partial"],
+        "scope": "html",
+        "body": [
+          "#\\$include|partial/$0$#"
+        ],
+        "description": "CMS Include / Partial"
+    },
+    "Galaxy_CMS_image": {
+        "prefix": "cms::image",
+        "scope": "html",
+        "body": [
+          "<img src=\"#\\$variable|${0:img}$#\" alt=\"#\\$variable|${0:img}.alt$#\" />"
+        ],
+        "description": "CMS Image with alt"
+    },
+    "Galaxy_CMS_link": {
+        "prefix": "cms::link",
+        "scope": "html",
+        "body": [
+          "<a href=\"#\\$variable|${0:url}$#\" #\\$variable|${0:url}.target$#></a>"
+        ],
+        "description": "CMS Link with target"
+    },
+    "Galaxy_Module_image": {
+        "prefix": "loop::image",
+        "scope": "html",
+        "body": [
+          "<img src=\"{resizeimg(a.first_photo.${1|url_panoramic,url_wide,url_standard,url_square,url_portrait,url_vertical|},500)}\" alt=\"{a.first_photo.alt}\" />"
+        ],
+        "description": "Module First Photo with alt"
+    },
+    "Galaxy_Module_image_ITEM": {
+        "prefix": "item::image",
+        "scope": "html",
+        "body": [
+          "<img src=\"{{resizeimg(item.first_photo.${1|url_panoramic,url_wide,url_standard,url_square,url_portrait,url_vertical|},500)}}\" alt=\"{{item.first_photo.alt}}\" />"
+        ],
+        "description": "Module ITEM First Photo with alt"
+    },
+}
